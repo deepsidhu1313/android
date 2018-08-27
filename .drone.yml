@@ -35,11 +35,11 @@ pipeline:
     when:
       matrix:
         FLAVOR: Analysis
-        
+
   checkLibrary:
     image: nextcloudci/android:android-37
     commands:
-      - [ $(grep android-library:master build.gradle -c) -ne 3 ]
+      - scripts/checkLibrary.sh
     when:
       matrix:
         FLAVOUR: Analysis
