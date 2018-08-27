@@ -36,6 +36,10 @@ pipeline:
       matrix:
         FLAVOR: Analysis
         
+    checkLibrary:
+      commands:
+        - [ $(grep android-library:master build.gradle -c) -ne 3 ]
+        
   notify:
       image: drillster/drone-email
       host: $EMAIL_HOST
