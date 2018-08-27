@@ -42,7 +42,7 @@ pipeline:
       - scripts/checkLibrary.sh
     when:
       matrix:
-        FLAVOUR: Check
+        FLAVOR: Analysis
         
   notify:
       image: drillster/drone-email
@@ -64,7 +64,6 @@ matrix:
     - Generic
     - Gplay
     - Analysis
-    - Check
 
 services:
   server:
